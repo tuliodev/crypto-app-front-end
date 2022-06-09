@@ -1,6 +1,8 @@
 import "./styles.css";
 import React, { useEffect, useState } from "react";
 
+import GetUserBalance from "../../components/GetUserBalance";
+
 const Home = () => {
   const [currentAccount, setCurrentAccount] = useState();
 
@@ -50,7 +52,7 @@ const Home = () => {
 
   useEffect(() => {
     checkIfWalletIsConnected();
-  }, []);
+  }, []); 
 
   return (
     <>
@@ -58,6 +60,12 @@ const Home = () => {
         <p>Welcome to crypto app</p>
         {!currentAccount && (
           <button onClick={connectWallet}>Connect your wallet</button>
+        )}
+        {
+        currentAccount && (
+            <div>
+                <GetUserBalance account={currentAccount} />  
+            </div>
         )}
       </div>
     </>
