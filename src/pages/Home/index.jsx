@@ -11,7 +11,7 @@ const Home = () => {
       const { ethereum } = window;
 
       if (!ethereum) {
-        console.log("Please install metamask");
+        alert("Please install metamask");
       } else {
         console.log("Ethereum object => ", ethereum);
       }

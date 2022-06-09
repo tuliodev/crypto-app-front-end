@@ -11,8 +11,6 @@ const GetUserBalance = ({ account }) => {
 
   const [currentBalance, setCurrentBalance] = useState();
 
-  console.log("User address", account);
-
   
   const getBalance = async () => {
     try {
