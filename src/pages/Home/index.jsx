@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 
 import GetUserBalance from "../../components/GetUserBalance";
 import GetToken from "../../components/GetToken";
+import GetTokenInfo from "../../components/GetTokenInfo";
 
 const Home = () => {
   const [currentAccount, setCurrentAccount] = useState();
@@ -59,6 +60,9 @@ const Home = () => {
     <>
       <div className="main-container">
         <p>Welcome to crypto app</p>
+
+        <GetTokenInfo />
+
         {!currentAccount && (
           <button onClick={connectWallet}>Connect your wallet</button>
         )}
