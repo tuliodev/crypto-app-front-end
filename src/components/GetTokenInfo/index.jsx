@@ -8,12 +8,6 @@ import abi from "../../utils/TokenSample.json";
 const ethers = require("ethers");
 
 const GetTokenInfo = () => {
-  /**
-   * Token supply
-   * Name
-   * Symbol
-   */
-
   const [currentData, setCurrentData] = useState({});
 
   let data = {};
