@@ -64,7 +64,10 @@ const Home = () => {
         <GetTokenInfo />
 
         {!currentAccount && (
-          <button onClick={connectWallet}>Connect your wallet</button>
+          <>
+            <br />
+            <button onClick={connectWallet}>Connect your wallet</button>
+          </>
         )}
         {currentAccount && (
           <>
