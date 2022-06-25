@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import GetUserBalance from "../../components/GetUserBalance";
 import GetToken from "../../components/GetToken";
 import GetTokenInfo from "../../components/GetTokenInfo";
+import TransferInput from "../../components/TransferInput";
 
 const Home = () => {
   const [currentAccount, setCurrentAccount] = useState();
@@ -48,7 +49,7 @@ const Home = () => {
       console.log("Connected", accounts[0]);
       setCurrentAccount(accounts[0]);
     } catch (error) {
-      console.log(error);
+      console.log('CONNECT WALLET ERROR => ', error);
     }
   };
 
@@ -61,16 +62,16 @@ const Home = () => {
       <div className="main-container">
         <p>Welcome to crypto app</p>
 
-        <GetTokenInfo />
+        <GetTokenInfo />  
+
+        <br />
 
         {!currentAccount && (
-          <>
-            <br />
             <button onClick={connectWallet}>Connect your wallet</button>
-          </>
         )}
         {currentAccount && (
           <>
+            <TransferInput />
             <div>
               <GetUserBalance account={currentAccount} />
             </div>
